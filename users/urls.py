@@ -5,8 +5,8 @@ from django.urls import include, path
 
 # urls list 
 urlpatterns = [
- path('userlogin',views.userlogin,name='userlogin'),
  path("auth",views.get_token),
  path('register',views.register,name='register'),
+ path('authenticate',views.authenticate,name='authenticate'),
  path('userlogout',views.userlogout,name='userlogout'),
 ]
