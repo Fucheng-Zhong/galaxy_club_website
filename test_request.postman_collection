@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "944ba891-b5f6-49f4-b0c2-af4347693e5d",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26447813"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/galaxy/requry_image",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inpob25nIiwiZXhwIjoxNjc5NDkzNTczfQ.Hoju_8o1vdfjjx92-Iep9FhPYVAKCKAM_j1-rnCnKdc",
+						"type": "text"
+					},
+					{
+						"key": "username",
+						"value": "zhong",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/galaxy/requry_image",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"galaxy",
+						"requry_image"
+					]
+				},
+				"description": "request image"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/users/auth",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "zhong",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "asdf",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/users/auth",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"auth"
+					]
+				},
+				"description": "get token"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/users/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "zhong",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "asdf",
+						"type": "text"
+					},
+					{
+						"key": "confirmedPassword",
+						"value": "asdf",
+						"type": "text"
+					},
+					{
+						"key": "email",
+						"value": "1234@qq.com",
+						"type": "text"
+					},
+					{
+						"key": "sex",
+						"value": "male",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Fh6e55n\",\r\n    \"password\":\"test\",\r\n    \"confirm your password\":\"tes6t\",\r\n    \"email\":\"qq@c3o33655445m33.cn\",\r\n    \"sex\":\"male\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/users/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"register"
+					]
+				},
+				"description": "register"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/users/authenticate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inpob25nIiwiZXhwIjoxNjc5NDkzNTczfQ.Hoju_8o1vdfjjx92-Iep9FhPYVAKCKAM_j1-rnCnKdc",
+						"type": "text"
+					},
+					{
+						"key": "username",
+						"value": "zhong",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/users/authenticate",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"authenticate"
+					]
+				},
+				"description": "鉴权"
+			},
+			"response": []
+		}
+	]
+}
