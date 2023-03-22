@@ -35,3 +35,4 @@
 ### describe: POST方法来提交分类后的结果。先进行鉴权，随后结果先被检查是否在用户/galaxy列表中，检查是已经被该用户分类过，检查分类次数是否大于5，通过后以 用户名_星系名 为id保存于分类结果的table。
 ### url: /classify
 ### variable: header: ['username','galaxy_name','token','type1']
+### error: 用户/星系不存在，鉴权错误，重复分类，分类次数大于5（暂定）
