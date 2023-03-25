@@ -1,0 +1,8 @@
+Django
+mysqlclient
+Pyjwt
+
+winget install MySQL
+winget install --id Oracle.MySQL
+开始菜单运行 MySQL Installer - Community
+在MySQL Workbench创建一个new schema

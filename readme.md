@@ -1,5 +1,7 @@
 # 构成
 
+## MySQL数据库,名称mydb, 在setting设置
+## APP: users, galaxy,
 
 # users APP
 ## users APP 为用户注册和鉴权系统，有一个table用于存放用户数据
