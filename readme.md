@@ -1,5 +1,6 @@
 # 构成
 
+## 使用gunicorn方式部署，端口8002
 ## MySQL数据库,名称mydb, 在setting设置
 ## APP: users, galaxy,
 
