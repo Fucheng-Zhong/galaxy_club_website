@@ -7,6 +7,5 @@ class Profile(models.Model):
     email = models.EmailField(unique=False)
     date_joined = models.DateTimeField(auto_now_add=True)
     last_login = models.DateTimeField(default=timezone.now)
-
-
-        
+    permissions = models.IntegerField(default=0)
+    smsCode = models.CharField(max_length=6,default='000000')

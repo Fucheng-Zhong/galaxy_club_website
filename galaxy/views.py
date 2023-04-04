@@ -3,7 +3,7 @@ from .models import Galaxies, UserClassifyRecord
 from users.models import Profile
 from django.http import JsonResponse
 from django.db.models import F
-from users.views import data_flow, authenticate_check,success
+from users.views import data_flow, authenticate_check, success
 
 # retrn galaxy info, include image url
 def get_galaxy_info(username,galaxy_name=None):
@@ -45,6 +45,9 @@ def check_classfy_results(classify_info):
         obj_user = Profile.objects.get(username=classify_info['username'])
     except Exception as e:
         raise Exception('{} 用户不存在'.format(classify_info['username']))
+    #没有权限提交结果
+    if obj_user.permissions < 1:
+        raise  Exception('{} 用户没有权限提交结果'.format(classify_info['username']))
     #检查galaxy分类次数 检查galaxy是否存在
     try:
         obj_galaxy = Galaxies.objects.get(galaxy_name=classify_info['galaxy_name'])
@@ -88,7 +91,7 @@ def requry_image(request):
 #return classify results
 @require_http_methods(["POST"])
 def classify_result(request):
-    response, keys = {}, ['username','galaxy_name','type1']
+    response, keys = {}, ['username','galaxy_name','type1'] #
     try:
         response = authenticate_check(request)
         if response['auth'] == True: # check out

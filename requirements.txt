@@ -1,6 +1,8 @@
 Django
 mysqlclient
 Pyjwt
+django-simpleui
+
 
 winget install MySQL
 winget install --id Oracle.MySQL

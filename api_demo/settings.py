@@ -15,25 +15,39 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-9ym2dpievg(*(#pk4td+lt7@xevla&q$*4)w_=rr@5sc1%nw!&"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 ALLOWED_HOSTS = ["*"]
+#SECURE_SSL_REDIRECT = True
+
+# 验证码发送
+# https://blog.csdn.net/qq_51014805/article/details/119987513
+# https://blog.csdn.net/dangfulin/article/details/107557465
+EMAIL_HOST = "smtp.qq.com"     # 服务器
+EMAIL_PORT = 25                 # 一般情况下都为25
+EMAIL_HOST_USER = "3253084721@qq.com"     # 账号
+EMAIL_HOST_PASSWORD = "igpcgqeicbdfcjbc"     # （上面保存的授权码）
+EMAIL_USE_TLS = True       # 一般都为False
+EMAIL_FROM = "test@qq.com"      # 邮箱来自
+email_title = '邮箱激活'
 
 
+# https://blog.csdn.net/qq_36581961/article/details/113408075
+SIMPLEUI_DEFAULT_THEME = 'admin.lte.css' #设定为simpleui
 # Application definition
 INSTALLED_APPS = [
+    'simpleui',  # 记得加在第一行 using simpleui
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "sslserver",
     "users",
     "galaxy",
 ]
@@ -67,7 +81,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "api_demo.wsgi.application"
-
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -127,21 +140,19 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
-
-TIME_ZONE = "UTC"
-
+# LANGUAGE_CODE = "en-us"
+# TIME_ZONE = "UTC"
+# 亚洲/上海时间和中文
+LANGUAGE_CODE = 'zh-hans'
+TIME_ZONE = 'Asia/Shanghai'
 USE_I18N = True
-
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-
 STATIC_URL = "static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
